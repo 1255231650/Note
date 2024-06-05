@@ -1,38 +1,23 @@
-截图									adb shell screencap -p /sdcard/screen.png
-
-拉取截图							adb pull /sdcard/screen.png
-
-所有应用包名					adb shell pm list packages
-
-根据包名查询应用信息	adb shell dumpsys package com.xxx.xxx
-
-查看应用版本号				adb shell pm dump com.jidouauto.refule | findstr version
-
-查看签名							keytool -list -v -keystore
-
-CPU架构							adb shell getprop ro.product.cpu.abi
-
-系统版本							adb shell getprop ro.build.version.sdk
-
-清除日志							adb logcat -c
-
-打印日志							adb logcat -v time > 640
-
-查看电量							adb shell dumpsys battery
-
-模拟输入							adb shell input keyevent
-
-清缓存								adb shell pm clear --user current com.jidouauto.refule
-
-关闭应用							adb shell am force-stop com.jidouauto.refule
-
-查看当前activity				adb shell dumpsys activity activities
-
-发送广播							adb shell am broadcast -a android.intent.action.BOOT_COMPLETED -n com.jidouauto.nissan.refuel/com.jidouauto.refuel.car.LauncherReceiver
-
-打开语言设置					adb shell am start -a android.settings.LOCALE_SETTINGS
-
-系统版本							getprop | grep finger
+|描述|命令|备注|
+|-|-|-|
+|截图|adb shell screencap -p /sdcard/screen.png||
+|拉取截图|adb pull /sdcard/screen.png||
+|所有应用包名|adb shell pm list packages||
+|根据包名查询应用信息|adb shell dumpsys package com.xxx.xxx||
+|查看应用版本号|adb shell pm dump com.jidouauto.refule \| findstr version||
+|查看签名|keytool -list -v -keystore||
+|CPU架构|adb shell getprop ro.product.cpu.abi||
+|系统版本|adb shell getprop ro.build.version.sdk||
+|清除日志|adb logcat -c||
+|打印日志|adb logcat -v time > 640||
+|查看电量|adb shell dumpsys battery||
+|模拟输入|adb shell input keyevent||
+|清缓存|adb shell pm clear --user current com.jidouauto.refule||
+|关闭应用|adb shell am force-stop com.jidouauto.refule||
+|查看当前activity|adb shell dumpsys activity activities||
+|打开语言设置|adb shell am start -a android.settings.LOCALE_SETTINGS||
+|系统版本|getprop \| grep finger||
+|模拟发送广播|adb shell am broadcast -a \<action> |--es 字符串类型参数  --ei int类型参数  --ez boolean类型参数   --el long类型的参数    --esal string类型的数据|
 
 
 
